@@ -25,15 +25,66 @@ QGLFlush is based on the Qt Framework, specifically on these modules:
 You will also need:
 
     - Python development files
+    - Python OpenGL module
     - Qscintilla (in particular, the Python Lexer)
+
+Finally, you will need Git to fetch the code.
 
 --------------------------------------------------------------------------------------------------
 
 II. Installation
 
+- Get the code from the repository:
+
+  git clone git://github.com/dMaggot/QGLFlush.git
+
+- Change into the fetched directory, create Makefile and compile:
+
+  cd QGLFlush
+  qmake
+  make
+
+If everything went ok, you should have a QGLFlush binary in the QGLFLush folder.
+
 --------------------------------------------------------------------------------------------------
 
 III. Usage
+
+QGLFLush provides a Python interpreter which can be used to issue Python OpenGL commands. Under
+the interpreter, the following modules have already been imported:
+
+    - OpenGL.GL
+    - OpenGL.GLU
+    - OpenGL.GLUT
+
+The 2D orthogonal box defined for the QGLWidget ranges from (-100,-100) to (100,100). Update
+button updates the QGLWidget with current Python OpenGL code in the interpreter. glFlush() button
+(literally) flushes the contents of the QGLWidget.An example of code that will work on the
+interpreter is this one, based on NeHe's lesson 2:
+
+def DrawGLScene():
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT)
+	glLoadIdentity()
+	glScalef(25,25,1)
+
+	glTranslatef(-1.5, 0.0, 0)
+
+	glBegin(GL_POLYGON)
+	glVertex3f(0.0, 1.0, 0.0)
+	glVertex3f(1.0, -1.0, 0.0)
+	glVertex3f(-1.0, -1.0, 0.0)
+	glEnd()
+
+	glTranslatef(3.0, 0.0, 0.0)
+
+	glBegin(GL_QUADS)
+	glVertex3f(-1.0, 1.0, 0.0)
+	glVertex3f(1.0, 1.0, 0.0)
+	glVertex3f(1.0, -1.0, 0.0)
+	glVertex3f(-1.0, -1.0, 0.0)
+	glEnd()
+
+DrawGLScene()
 
 --------------------------------------------------------------------------------------------------
 

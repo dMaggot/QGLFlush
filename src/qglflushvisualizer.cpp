@@ -107,7 +107,7 @@ void QGLFlushVisualizer::paintGL()
 
                     if (dataCopy.rect().contains(x,y))
                     {
-                        if (!(x >= (width()/2 -1) && x <= (width()/2 +1) && y >= (height()/2 -1) && y <= (height()/2 +1)))
+                        if(!QRect(width()/2-1,height()/2-1,3,3).contains(x,y))
                         {
                             dataCopy.setPixel(x,y, data.pixel(i,j));
                             flushing = true;
