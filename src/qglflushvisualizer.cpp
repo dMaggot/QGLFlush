@@ -102,6 +102,9 @@ void QGLFlushVisualizer::paintGL()
 
                     spiral->transform(x, y, tick);
 
+                    x += dataCopy.width()/2;
+                    y += dataCopy.height()/2;
+
                     if (dataCopy.rect().contains(x,y))
                     {
                         if (!(x >= (width()/2 -1) && x <= (width()/2 +1) && y >= (height()/2 -1) && y <= (height()/2 +1)))

@@ -24,6 +24,6 @@ void Spiral::transform(int & x, int & y, float tick)
         float tx = tr * cos(p);
         float ty = tr * sin(p);
 
-        x = cos(angle) * tx - sin(angle) * ty + 300;
-        y = sin(angle) * tx + cos(angle) * ty + 300;
+        x = cos(angle) * tx - sin(angle) * ty;
+        y = sin(angle) * tx + cos(angle) * ty;
 }
