@@ -40,7 +40,7 @@
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_2">
+         <widget class="QPushButton" name="glFlushButton">
           <property name="text">
            <string>glFlush()</string>
           </property>

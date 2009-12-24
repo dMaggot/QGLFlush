@@ -6,9 +6,15 @@ TARGET = ../QGLFlush
 TEMPLATE = app
 SOURCES += main.cpp \
     qglflushwindow.cpp \
-    qglflushvisualizer.cpp
+    qglflushvisualizer.cpp \
+    spiral.cpp \
+    logarithmicspiral.cpp
 HEADERS += qglflushwindow.h \
-    qglflushvisualizer.h
+    qglflushvisualizer.h \
+    spiral.h \
+    logarithmicspiral.h
 FORMS += qglflushwindow.ui
-INCLUDEPATH += /usr/include/Qsci /usr/include/python2.6
-LIBS += -lqscintilla2 -lpython2.6
+INCLUDEPATH += /usr/include/Qsci \
+    /usr/include/python2.6
+LIBS += -lqscintilla2 \
+    -lpython2.6

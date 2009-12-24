@@ -3,6 +3,8 @@
 
 #include <QtGui/QMainWindow>
 
+#include <QTimer>
+
 namespace Ui
 {
     class QGLFlushWindow;
@@ -18,9 +20,12 @@ public:
 
 private:
     Ui::QGLFlushWindow *ui;
+    QTimer updaterTimer;
 
 protected slots:
+    void updater();
     void on_updateButton_clicked();
+    void on_glFlushButton_clicked();
 };
 
 #endif // QGLFLUSHWINDOW_H
